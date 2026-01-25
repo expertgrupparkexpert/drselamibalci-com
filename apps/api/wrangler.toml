@@ -1,0 +1,17 @@
+name = "drselamibalci-api"
+main = "src/index.ts"
+compatibility_date = "2024-05-15"
+compatibility_flags = [ "nodejs_compat" ]
+
+# D1 Database Binding
+[[d1_databases]]
+binding = "DB" # Available in your Worker on env.DB
+database_name = "drselamibalci-db"
+database_id = "xxxx-xxxx-xxxx-xxxx" # Will be updated after creation
+
+[vars]
+# Dev Variables
+ALLOWED_ORIGINS = "*"
+JWT_SECRET = "dev-secret-key-123"
+ADMIN_PASSWORD = "Talha"
+TURNSTILE_SECRET = "1x0000000000000000000000000000000AA" # Standard Test Key

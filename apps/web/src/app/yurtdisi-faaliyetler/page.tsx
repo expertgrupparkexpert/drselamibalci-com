@@ -1,0 +1,50 @@
+import { getActivities } from "@/lib/api";
+import { Activity } from "@repo/shared";
+
+export const metadata = {
+    title: "Yurtdışı Faaliyetler - Dr. Selami Balcı",
+    description: "Dr. Selami Balcı'nın uluslararası arenadaki projeleri ve işbirlikleri.",
+};
+
+export default async function InternationalActivitiesPage() {
+    const activities = await getActivities();
+
+    return (
+        <div className="max-w-5xl mx-auto space-y-16">
+            {/* Header */}
+            <header className="text-center space-y-4 pt-12">
+                <h1 className="text-4xl font-bold text-slate-700 font-serif">Yurtdışı Faaliyetleri</h1>
+                <p className="text-slate-500 font-light">
+                    Dr. Selami Balcı'nın uluslararası arenadaki projeleri ve işbirlikleri.
+                </p>
+            </header>
+
+            <div className="grid gap-4 max-w-4xl mx-auto pb-20">
+                {activities.map((activity: Activity) => (
+                    <div key={activity.id} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-start gap-4 transition hover:shadow-md">
+                        {/* Teal Globe Icon Matching Screenshot */}
+                        <div className="flex-shrink-0 pt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgb(15, 118, 110)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
+                        </div>
+
+                        <div>
+                            <div className="flex items-center gap-2 mb-1">
+                                <h3 className="font-bold text-lg text-slate-900 font-serif">{activity.country}</h3>
+                                {activity.year && (
+                                    <span className="text-xs font-semibold text-accent-700 bg-accent-50 px-2 py-0.5 rounded-full border border-accent-100/50">
+                                        {activity.year}
+                                    </span>
+                                )}
+                            </div>
+                            <p className="text-slate-500 font-light text-sm">{activity.description}</p>
+                        </div>
+                    </div>
+                ))}
+
+                {activities.length === 0 && (
+                    <p className="text-center text-slate-500 italic py-12">Henüz listelenen bir faaliyet bulunmuyor.</p>
+                )}
+            </div>
+        </div>
+    );
+}

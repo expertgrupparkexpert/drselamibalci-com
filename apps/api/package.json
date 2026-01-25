@@ -1,0 +1,18 @@
+{
+  "name": "api",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --ip 127.0.0.1 --port 8787",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.6",
+    "hono": "^4.11.4",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260114.0",
+    "wrangler": "^4.4.0"
+  }
+}

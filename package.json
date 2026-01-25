@@ -1,0 +1,1 @@
+{"workspaces":["apps/*","packages/*"],"devDependencies":{"wrangler":"^4.59.1"}}
