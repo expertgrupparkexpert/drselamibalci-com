@@ -1,1 +1,12 @@
-{"workspaces":["apps/*","packages/*"],"devDependencies":{"wrangler":"^4.59.1"}}
+{
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "build:web": "npm run pages:build --workspace=web"
+    },
+    "devDependencies": {
+        "wrangler": "^4.59.1"
+    }
+}
