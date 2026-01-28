@@ -80,7 +80,7 @@ export const RESUME_ITEMS: ResumeItem[] = [
     { id: 10, type: 'education', title: 'Harita Mühendisliği', organization: 'Yıldız Teknik Üniversitesi İnşaat Fakültesi', start_date: '', end_date: '', description: '', sort_order: 4, created_at: NOW },
 
     // Projects
-    { id: 11, type: 'project', title: 'İstanbul Otopark Master Planı', organization: 'İSPARK A.Ş.', start_date: '4,5 Yıl Süren Bir Çalışma', end_date: '', description: 'İstanbul genelinde otopark stratejisinin ve gelecek projeksiyonlarının belirlenmesi.', sort_order: 1, created_at: NOW },
+    { id: 11, type: 'project', title: 'İstanbul Otopark Master Planı', organization: 'İSPARK A.Ş.', start_date: '4,5 Yıl Süren Bir Çalışma', end_date: '', description: 'İstanbul genelinde otopark stratejisinin ve gelecek projeksiyonlarının belirlenmesi.', sort_order: 1, created_at: NOW }, // Updated duration
     { id: 12, type: 'project', title: 'İstanbul Geneli Bisiklet Master Planı', organization: 'İSPARK A.Ş.', start_date: '', end_date: '', description: 'Sürdürülebilir ulaşım kapsamında bisiklet yolları ve entegrasyonu.', sort_order: 2, created_at: NOW },
     { id: 13, type: 'project', title: 'Tarabya & İstinye Tekne Parkları', organization: 'İSPARK A.Ş.', start_date: '', end_date: '', description: 'Deniz turizmine katkı sağlayan yüzer iskele ve tekne park çözümleri.', sort_order: 3, created_at: NOW },
     { id: 14, type: 'project', title: 'Alibeyköy Cep Otogarı', organization: 'İSPARK A.Ş.', start_date: '', end_date: '', description: 'Şehir içi trafik yoğunluğunu azaltmaya yönelik modern cep otogarı projesi.', sort_order: 4, created_at: NOW },
