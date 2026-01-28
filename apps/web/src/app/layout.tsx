@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     images: ["/dr-selami-balci.jpg"],
   },
   icons: {
-    icon: "/dr-selami-balci.jpg",
-    apple: "/dr-selami-balci.jpg",
+    icon: "/dr-selami-balci.jpg?v=nocache",
+    apple: "/dr-selami-balci.jpg?v=nocache",
   },
 };
 
