@@ -10,6 +10,9 @@ const nextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
+    experimental: {
+        runtime: 'experimental-edge',
+    },
 };
 
 if (process.env.NODE_ENV === 'development') {
