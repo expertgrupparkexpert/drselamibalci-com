@@ -1,2 +1,3 @@
 /*
-  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  Surrogate-Control: no-store
