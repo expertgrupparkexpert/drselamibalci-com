@@ -48,7 +48,7 @@ export default async function ExpertisePage() {
                 {/* Managed Projects List */}
                 <section className="space-y-10">
                     <div className="flex items-center gap-4 border-b border-slate-200 pb-4">
-                        <h2 className="text-3xl font-bold text-slate-800 font-serif">Yönetilen Başlıca Projeler</h2>
+                        <h2 className="text-3xl font-bold text-slate-800 font-serif">Yönetilen Projelerimiz</h2>
                         <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">
                             {projects.length} Proje
                         </span>
@@ -68,21 +68,23 @@ export default async function ExpertisePage() {
                                         {(project.start_date || project.end_date) && (
                                             <span className="text-sm font-medium text-slate-400 font-mono">
                                                 {(() => {
-                                                    const start = parseInt(project.start_date);
-                                                    const end = parseInt(project.end_date || '');
+                                                    const startDate = project.start_date || '';
+                                                    const endDate = project.end_date || '';
+                                                    const start = parseInt(startDate);
+                                                    const end = parseInt(endDate);
 
                                                     // If we have valid years for start and end
-                                                    if (!isNaN(start) && !isNaN(end) && project.start_date.length === 4 && project.end_date?.length === 4) {
+                                                    if (!isNaN(start) && !isNaN(end) && startDate.length === 4 && endDate.length === 4) {
                                                         const diff = end - start;
                                                         return diff > 0 ? `${diff} Yıl Süren Bir Çalışma` : `${start} Yılında Yapılan Çalışma`;
                                                     }
 
                                                     // Legacy/Mixed format handling
-                                                    if (project.end_date) {
-                                                        return `${project.start_date} - ${project.end_date}`;
+                                                    if (endDate) {
+                                                        return `${startDate} - ${endDate}`;
                                                     }
 
-                                                    return project.start_date;
+                                                    return startDate;
                                                 })()}
                                             </span>
                                         )}
