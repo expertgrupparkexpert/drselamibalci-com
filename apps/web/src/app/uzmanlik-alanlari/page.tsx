@@ -2,6 +2,8 @@ import { getPageContent, getResumeItems } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { ResumeItem } from "@repo/shared";
 
+export const runtime = 'edge';
+
 export const metadata = {
     title: "Uzmanlık Alanları - Dr. Selami Balcı",
     description: "Dr. Selami Balcı'nın uzmanlık alanları ve yönettiği projeler.",
