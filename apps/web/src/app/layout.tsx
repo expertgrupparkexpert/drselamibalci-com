@@ -7,8 +7,45 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "Dr. Selami Balcı",
-  description: "Dr. Selami Balcı - Kişisel Web Sitesi",
+  metadataBase: new URL('https://drselamibalci.com'),
+  title: {
+    default: "Dr. Selami Balcı | Şehir Plancısı, Akademisyen ve Expert Grup Kurucusu",
+    template: "%s | Dr. Selami Balcı",
+  },
+  description: "Dr. Selami Balcı'nın kişisel web sitesi. Sürdürülebilir şehircilik, kentsel dönüşüm, gayrimenkul değerleme ve akademik çalışmalar hakkında bilgiler.",
+  keywords: [
+    "Selami Balcı", "Dr. Selami Balcı", "Expert Grup", "Şehir Plancısı",
+    "Kentsel Dönüşüm", "Akademisyen", "Expert İmar", "Gayrimenkul Değerleme",
+    "Sürdürülebilir Şehircilik", "Proje Yönetimi"
+  ],
+  authors: [{ name: "Dr. Selami Balcı" }],
+  creator: "Dr. Selami Balcı",
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://drselamibalci.com",
+    title: "Dr. Selami Balcı | Şehir Plancısı ve Akademisyen",
+    description: "Sürdürülebilir kentsel çözümler, büyük ölçekli proje yönetimi ve stratejik danışmanlık.",
+    siteName: "Dr. Selami Balcı",
+    images: [
+      {
+        url: "/icon.png", // Fallback to icon if no specific OG image yet
+        width: 800,
+        height: 600,
+        alt: "Dr. Selami Balcı",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr. Selami Balcı",
+    description: "Şehir Plancısı, Akademisyen ve Expert Grup Kurucusu.",
+    images: ["/icon.png"],
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -16,10 +53,37 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Selami Balcı",
+    "jobTitle": "Kurucu & Şehir Plancısı",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Expert Grup"
+    },
+    "url": "https://drselamibalci.com",
+    "image": "https://drselamibalci.com/icon.png",
+    "description": "Dr. Selami Balcı, sürdürülebilir şehircilik ve kentsel dönüşüm alanında uzmanlaşmış bir şehir plancısı ve akademisyendir.",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "İstanbul Teknik Üniversitesi"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/drselamibalci",
+      "https://expertimar.com"
+    ]
+  };
+
   return (
     <html lang="tr" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} min-h-screen flex flex-col bg-zinc-50 text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900`}>
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
 
         <main className="flex-grow pt-20">
