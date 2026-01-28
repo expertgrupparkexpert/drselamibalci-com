@@ -63,9 +63,25 @@ export default async function ExpertisePage() {
                                         <div className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-600 uppercase tracking-wider">
                                             {project.organization}
                                         </div>
-                                        {project.start_date && (
+                                        {(project.start_date || project.end_date) && (
                                             <span className="text-sm font-medium text-slate-400 font-mono">
-                                                {project.start_date} {project.end_date ? `- ${project.end_date}` : ''}
+                                                {(() => {
+                                                    const start = parseInt(project.start_date);
+                                                    const end = parseInt(project.end_date || '');
+
+                                                    // If we have valid years for start and end
+                                                    if (!isNaN(start) && !isNaN(end) && project.start_date.length === 4 && project.end_date?.length === 4) {
+                                                        const diff = end - start;
+                                                        return diff > 0 ? `${diff} Yıl Süren Bir Çalışma` : `${start} Yılında Yapılan Çalışma`;
+                                                    }
+
+                                                    // Legacy/Mixed format handling
+                                                    if (project.end_date) {
+                                                        return `${project.start_date} - ${project.end_date}`;
+                                                    }
+
+                                                    return project.start_date;
+                                                })()}
                                             </span>
                                         )}
                                     </div>
