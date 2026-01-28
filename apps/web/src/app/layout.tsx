@@ -63,7 +63,7 @@ export default function RootLayout({
       "name": "Expert Grup"
     },
     "url": "https://drselamibalci.com",
-    "image": "https://drselamibalci.com/icon.png",
+    "image": "https://drselamibalci.com/dr-selami-balci.jpg",
     "description": "Dr. Selami Balcı, sürdürülebilir şehircilik ve kentsel dönüşüm alanında uzmanlaşmış bir şehir plancısı ve akademisyendir.",
     "alumniOf": [
       {
