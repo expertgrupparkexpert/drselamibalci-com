@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Dr. Selami Balcı",
     images: [
       {
-        url: "/icon.png", // Fallback to icon if no specific OG image yet
+        url: "/dr-selami-balci.jpg",
         width: 800,
         height: 600,
         alt: "Dr. Selami Balcı",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dr. Selami Balcı",
     description: "Şehir Plancısı, Akademisyen ve Expert Grup Kurucusu.",
-    images: ["/icon.png"],
+    images: ["/dr-selami-balci.jpg"],
   },
   icons: {
     icon: "/icon.png?v=2",
