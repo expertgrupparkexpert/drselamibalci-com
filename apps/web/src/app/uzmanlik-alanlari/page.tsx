@@ -48,7 +48,7 @@ export default async function ExpertisePage() {
                 {/* Managed Projects List */}
                 <section className="space-y-10">
                     <div className="flex items-center gap-4 border-b border-slate-200 pb-4">
-                        <h2 className="text-3xl font-bold text-slate-800 font-serif">Yönetilen Projelerimiz (v1)</h2>
+                        <h2 className="text-3xl font-bold text-slate-800 font-serif">Yönetilen Projelerimiz</h2>
                         <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">
                             {projects.length} Proje
                         </span>
@@ -68,6 +68,11 @@ export default async function ExpertisePage() {
                                         {(project.start_date || project.end_date) && (
                                             <span className="text-sm font-medium text-slate-400 font-mono">
                                                 {(() => {
+                                                    // Quick Fix: Force specific text for Project ID 11
+                                                    if (project.id === 11) {
+                                                        return "4,5 Yıl Süren Bir Çalışma";
+                                                    }
+
                                                     const startDate = project.start_date || '';
                                                     const endDate = project.end_date || '';
                                                     const start = parseInt(startDate);
